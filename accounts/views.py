@@ -59,5 +59,11 @@ def login(request):
 def profile(request):
     """A view that displays the profile page of a logged in user"""
     return render(request, 'profile.html')
+    
+def logout(request):
+    """A view that logs the user out and redirects back to the index page"""
+    auth.logout(request)
+    messages.success(request, 'You have successfully logged out')
+    return redirect(reverse('login'))
 
 
