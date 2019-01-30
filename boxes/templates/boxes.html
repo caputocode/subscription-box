@@ -5,12 +5,12 @@
     {% for box in boxes %}
     <div class="col-xs-10 col-xs-offset-1 col-sm-offset-0 col-sm-6 col-md-4 panel panel-default">
         <div class="panel-body">
-            <div class="products" style="background-image:url('{{ MEDIA_URL }}{{ box.image }}')"></div>
+            <div class="boxes" style="background-image:url('{{ MEDIA_URL }}{{ box.image }}')"></div>
             <h3>{{ box.name }}</h3>
-            <p class="product-description">{{ box.description }}</p>
+            <p class="box-description">{{ box.description }}</p>
             <p>{{ box.price }}</p>
             
-            <form method="POST" action="">
+            <form method="POST" action="{ url 'add_to_cart' box.id %}">
                 {% csrf_token %}
                 <div class="input-group">
                 <input class="form-control" type="number" min='1' max='999' name="quantity" placeholder="Quantity"/>
