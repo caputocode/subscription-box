@@ -8,4 +8,7 @@ class Box(models.Model):
     image = models.ImageField(upload_to='images')
     
     def __str__(self):
+        """
+        Returns a String with name of box
+        """
         return self.name

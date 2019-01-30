@@ -17,12 +17,16 @@ from django.conf.urls import url, include
 from django.contrib import admin
 from accounts import urls as urls_accounts
 from home import urls as urls_home
+from boxes import urls as urls_boxes
+from boxes.views import display_boxes
 from home.views import index
 from django.views import static
+from .settings import MEDIA_ROOT
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^$', index),
     url(r'^accounts/', include(urls_accounts)),
-
+    url(r'^boxes/', include(urls_boxes)),
+    url(r'^media/(?P<path>.*)$', static.serve, {'document_root': MEDIA_ROOT}),
 ]
