@@ -1,4 +1,5 @@
 {% extends "base.html" %}
+{% load staticfiles %}
 {% block content %}
 
 <div class="row row-flex">
@@ -10,7 +11,7 @@
             <p class="box-description">{{ box.description }}</p>
             <p>{{ box.price }}</p>
             
-            <form method="POST" action="{ url 'add_to_cart' box.id %}">
+            <form method="POST" action="{% url 'add_to_cart' box.id %}">
                 {% csrf_token %}
                 <div class="input-group">
                 <input class="form-control" type="number" min='1' max='999' name="quantity" placeholder="Quantity"/>

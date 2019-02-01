@@ -1,5 +1,16 @@
 {% extends 'base.html' %}
 {% block content %}
-<h3>Welcome {{user}}</h3>
+
+
+{% if messages %}
+
+  <div>
+
+    {% for message in messages %}
+    {{ message }}
+    {% endfor %}
+  </div>
+
+{% endif %}
 <p>Browse the latest Boxes.</p>
 {% endblock %}

@@ -9,13 +9,17 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+    <link rel="stylesheet" href="{% static 'font-awesome/css/fontawesome.min.css' %}" type="text/css" />
+    <link rel="stylesheet" href="{% static 'css/custom.css' %}">
     <title>Wellness Boxes</title>
+    {% block head_js %} {% endblock head_js %}
 </head>
 
 <body>
-    
- <!--  navbar    -->
- 
+
+    <!--  navbar    -->
+
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -27,7 +31,7 @@
                     <a class="nav-link" href="#">Concept <span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item active">
-                    <a class="nav-link" href="#">Boxes <span class="sr-only">(current)</span></a>
+                    <a class="nav-link" href="{% url 'boxes' %}">Boxes <span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item active">
                     <a class="nav-link" href="#">Our Following <span class="sr-only">(current)</span></a>
@@ -41,7 +45,9 @@
                 <li class="nav-item">
                     <button class="btn btn-outline-success" type="button">Subscribe</button>
                 </li>
-             </ul>
+
+            </ul>
+
             {% if user.is_authenticated %}
             <span class="navbar-text active">
                 <a class="nav-link" href="{% url 'profile' %}">Profile <span class="sr-only">(current)</span></a>
@@ -49,21 +55,34 @@
             <span class="navbar-text active">
                 <a class="nav-link" href="{% url 'logout' %}">Logout <span class="sr-only">(current)</span></a>
             </span>
-            {%  else %}
+            {% else %}
             <span class="navbar-text active">
-                <a class="nav-link" href="{% url 'register' %}">Register <span class="sr-only">(current)</span></a>
+                <a class="nav-link" href="{% url 'register' %}"><i class="fas fa-user-plus"></i>  Register <span class="sr-only">(current)</span></a>
             </span>
             <span class="navbar-text active">
-                <a class="nav-link" href="{% url 'login' %}">Login <span class="sr-only">(current)</span></a>
+                <a class="nav-link" href="{% url 'login' %}"><i class="fas fa-user"></i>  Login <span class="sr-only">(current)</span></a>
             </span>
             {% endif %}
+            <span class="navbar-text active">
+                <a href="{% url 'view_cart' %}"> Basket <i class="fas fa-shopping-cart"></i>
+                {% if product_count > 0 %}
+                <label class="badge badge-warning">{{ product_count }}</label>
+                {% endif %}
+                </a>
+            </span>
         </div>
     </nav>
-    
- <!--  navbar    -->
 
-    {% block content %} {% endblock %}
-
+    <!--  navbar    -->
+    <div class="banner">
+        <img class="img-fluid" src="/media/images/mind.jpg"></img>
+        {% block content %} {% endblock %}
+    </div>
+    <footer>
+        <div>
+            <p>Made by Code Institute Bootcamper Heather Caputo</p>
+        </div>
+    </footer>
 
 
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
