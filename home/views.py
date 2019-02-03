@@ -1,8 +1,8 @@
 from django.shortcuts import render
 
 # Create your views here.
-def index(request):
+def concept(request):
     """
-    View containing Index Home Page 
+    View containing About Us Page 
     """
-    return render(request, 'index.html')
+    return render(request, 'concept.html')

@@ -2,15 +2,22 @@
 {% block content %}
 
 
+
+<div class="jumbotron jumbotron-fluid home-title">
+  <div class="container">x
+  <h1 class="display-4">Hello, world!</h1>
+  <p class="lead">This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.</p>
+  <hr class="my-4">
+  <p>Click below to find out more about our boxes ! </p>
+  <a class="btn btn-primary btn-lg" href="{% url 'boxes' %}" role="button">Subcribe</a>
+  </div>
+</div>
 {% if messages %}
-
   <div>
-
     {% for message in messages %}
     {{ message }}
     {% endfor %}
   </div>
-
 {% endif %}
 <p>Browse the latest Boxes.</p>
 {% endblock %}

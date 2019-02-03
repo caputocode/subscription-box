@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="row">
+    <div class="col-xs-12">
+        <h1>The Mind Blog</h1>
+        <p>Scroll through our latest posts. A collection of hot topic conversations contributing to health and wellbeing</p>
+    </div>
+</div>
+
+    {% for post in posts %}
+<div class="row">
+<div class="col-xs-10 col-xs-offset-1 col-sm-offset-0 col-sm-12 col-md-4 col-md-offset-0">
+        <div class="card">
+            <div class="card-body">
+                <img class="boxes card-img-top" src="{{ MEDIA_URL }}{{ post.image }}"></img>
+                <h3>{{ post.title }}</h3>
+                <p>{{ post.content | truncatewords:30 }}</p>
+                <p><a href="{% url 'post_detail' post.id %}"  class="btn btn-default">Read more</a></p>
+                <p><span class="boldtext">Published on:</span> {{ post.published_date }} </p>
+                <p><span class="boldtext">Views:</span> {{post.views}}</p>
+                <p><span class="boldtext">Tag:</span> {{ post.tag }}</p>
+            </div>
+        </div>
+       
+    </div>
+</div>
+    {% endfor %}
+
+{% endblock %}

@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% block content %}
+    <div class="row">
+        <div class="col-xs-10 col-xs-offset-1 col-sm-offset-0 col-sm-12 col-md-4 col-md-offset-0">
+        <div class="card">
+            <div class="card-body">
+                {% if post.image %}
+                <img class="boxes card-img-top" src="/media/{{ post.image }}"></img>
+                {% endif %}
+                <h3>{{ post.title }}</h3>
+                    <p>{{ post.content }}</p>
+                    <p><span class="boldtext">Published on:</span> {{ post.published_date }} </p>
+                    <p><span class="boldtext">Views:</span> {{post.views}}</p>
+                    <p><span class="boldtext">Tag:</span> {{ post.tag }}</p>
+                    <a href="{% url 'get_posts' %}" class="btn btn-default">Back to Blog</a>
+                    <a href="{% url 'edit_post' post.id %}" class="btn btn-default">Edit Post</a>
+                    <hr>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

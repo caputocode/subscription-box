@@ -1,24 +1,28 @@
-footer {
-    margin-top: 40px;
-    padding-top: 40px;
-    padding-bottom: 40px;
-    background-color: #ededed;
-    height: auto;
+body { 
+  background: url(/media/images/mind.jpg) no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
 }
 
-.img-fluid {
-    max-width: 100%;
-    height: auto;
+
+.content {
+    position: absolute;
+    top: 200px;
 }
 
-.boxes {
-    background-size: contain;
-    background-position: center center;
-    background-repeat: no-repeat;
-    width: 250px;
-    height: 250px;
-    margin: 0 auto;
-}
+
+
+
+/*.boxes {*/
+/*    background-size: contain;*/
+/*    background-position: center center;*/
+/*    background-repeat: no-repeat;*/
+/*    width: 250px;*/
+/*    height: 250px;*/
+/*    margin: 0 auto;*/
+/*}*/
 
 .badge {
     padding-left: 9px;
@@ -27,4 +31,34 @@ footer {
     -moz-border-radius: 9px;
     border-radius: 9px;
     
+}
+
+.card {
+    margin: 10px;
+}
+
+.concept-title {
+    margin: 30px 0;
+}
+
+.home-title {
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.concept {
+   background:rgba(255,255,255,0.7);
+}
+
+footer {
+    position: relative;
+    bottom: 0px;
+    width: 100%;
+    margin-top: 20px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    background-color: #183B47;
+    height: auto;
 }
