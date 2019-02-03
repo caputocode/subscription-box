@@ -34,7 +34,7 @@
                     <a class="nav-link" href="{% url 'boxes' %}">Boxes <span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item active">
-                    <a class="nav-link" href="#">Our Following <span class="sr-only">(current)</span></a>
+                    <a class="nav-link" href="{% url 'following' %}">Our Following <span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item active">
                     <a class="nav-link" href="{% url 'get_posts' %}">Blog <span class="sr-only">(current)</span></a>
@@ -67,14 +67,20 @@
     </nav>
 
     <!--  navbar    -->
- <div class="container">  
-    <div class="row">
+
             {% block content %} {% endblock %}
-    </div>
-    </div> 
+
     <footer>
-        <div>
-            <p>Made by Code Institute Bootcamper Heather Caputo</p>
+        <div class="row">
+            <div class="col-xs-12 col-md-4">
+                <p>Made by Code Institute Bootcamper Heather Caputo</p>
+            </div>
+            <div class="col-xs-12 col-md-8">
+                <ul class="socials">
+                    <li><i class="fab fa-facebook-f"></i></li>
+                    <li><i class="fab fa-instagram"></i></li>
+                </ul>
+            </div>
         </div>
     </footer>
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->

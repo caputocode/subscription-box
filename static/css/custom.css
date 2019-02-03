@@ -1,19 +1,36 @@
-body { 
-  background: url(/media/images/mind.jpg) no-repeat center center fixed; 
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
-}
-
 
 .content {
     position: absolute;
     top: 200px;
 }
 
+.jumbo-contents{
+    text-align: center;
+}
 
+/*.............home page */
 
+.home-banner {
+    background-image: url(/media/images/mind.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+    height: 300px;
+}
+.how_it_works_title {
+    text-align: center;
+}
+
+.works-img {
+    margin-left: auto;
+	margin-right: auto;
+	display: block;
+}
+
+.display-4 {
+    color: white;
+}
 
 /*.boxes {*/
 /*    background-size: contain;*/
@@ -23,6 +40,15 @@ body {
 /*    height: 250px;*/
 /*    margin: 0 auto;*/
 /*}*/
+
+.works-img {
+    background-image: url(/media/images/goforit.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 400px;
+    height: 400px;
+}
 
 .badge {
     padding-left: 9px;
@@ -37,10 +63,6 @@ body {
     margin: 10px;
 }
 
-.concept-title {
-    margin: 30px 0;
-}
-
 .home-title {
     text-align: center;
     display: flex;
@@ -48,17 +70,78 @@ body {
     align-items: center;
 }
 
+/*................Concept page */
+
+.concept-title {
+    margin: 30px 0;
+}
+
 .concept {
    background:rgba(255,255,255,0.7);
 }
 
+.concept-banner {
+    background-image: url(/media/images/concept-banner.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+    height: 300px;
+}
+
+/*..............................BLOG PAGE */
+
+.blog-banner {
+    background-image: url(/media/images/blog.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+    height: 300px;
+}
+
+.banner-text {
+  color: #333A41;
+  position: absolute;
+  top: 20%;
+  left: 5%;
+  background:rgba(255,255,255,0.7); 
+
+}
+
+.registration {
+    background:rgba(255,255,255,0.7); 
+}
+
+/*....................Footer */
+
 footer {
-    position: relative;
-    bottom: 0px;
     width: 100%;
     margin-top: 20px;
     padding-top: 20px;
     padding-bottom: 20px;
-    background-color: #183B47;
+    background-color: #333A41;
     height: auto;
+    color: white;
 }
+
+.socials li {
+    list-style: none;
+    display: inline-block;
+    padding: 15px 15px;
+    margin: 10px 30px;
+    font-size: 20px;
+    border-radius: 50%;
+    border: 1px solid white;
+    color: #fff;
+    transition: .5s;
+}
+
+.socials li:hover {
+    border: 1px solid #D73F4B;
+    color: pink;
+    transition: .5s;
+    cursor: pointer;
+}
+
+/*..................Media Queries*/

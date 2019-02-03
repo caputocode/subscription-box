@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="container">
+    <div class="row">
+        <div class="col-xs-12 col-sm-8 offset-sm-2">
+        <div class="card mb-3">
+            <div class="card-body">
+                {% if box.image %}
+                <img class="boxes card-img-top" src="/media/{{ box.image }}"></img>
+                {% endif %}
+                <h3>{{ box.title }}</h3>
+                <p>{{ box.description }}</p>
+                <p>{{ box.contents }}</p>
+                    <a href="{% url 'boxes' %}" class="btn btn-default">Back to Boxes</a>
+                    <hr>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

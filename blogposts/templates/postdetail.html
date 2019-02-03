@@ -1,8 +1,9 @@
 {% extends 'base.html' %}
 {% block content %}
+<div class="container">
     <div class="row">
-        <div class="col-xs-10 col-xs-offset-1 col-sm-offset-0 col-sm-12 col-md-4 col-md-offset-0">
-        <div class="card">
+        <div class="col-xs-12 col-sm-8 offset-sm-2">
+        <div class="card mb-3">
             <div class="card-body">
                 {% if post.image %}
                 <img class="boxes card-img-top" src="/media/{{ post.image }}"></img>
@@ -19,4 +20,5 @@
             </div>
         </div>
     </div>
+</div>
 {% endblock %}

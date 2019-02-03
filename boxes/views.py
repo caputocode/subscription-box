@@ -16,7 +16,11 @@ def box_detail(request, pk):
     'postdetail.html' template. Or return a 404 error
     if the post is not found
     """
-    box = get_object_or_404(Post, pk=pk)
-    box.views += 1
+    box = get_object_or_404(Box, pk=pk)
     box.save()
-    return render(request, 'display-boxes.html', {'box': box })
+    return render(request, 'boxdetail.html', {'box': box })
+
+
+
+    
+    
