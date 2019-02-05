@@ -24,7 +24,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = 'h_1kzzur3=!c-1k=4k*74&1r38d=iodjyt7g=ar5te6kfo+%od'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['subscription-box-codecap.c9users.io']
 
@@ -44,6 +44,7 @@ INSTALLED_APPS = [
     'home',
     'cart',
     'blogposts',
+    'subscriptions',
 
 ]
 

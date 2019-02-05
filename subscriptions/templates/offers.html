@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+{% block content %}
+<div class="row">
+    {% for offer in offers %}
+    <div class="col-xs-10 offset-xs-1 col-sm-6 col-md-4">
+        <div class="card">
+            <div class="card-body">
+                <img class="boxes card-img-top" src="{{ MEDIA_URL }}{{ offer.image }}"></img>
+                <h3>{{ offer.title }}</h3>
+                <p class="box-description">{{ offer.content }}</p>
+                <p>£ {{ offer.price }}</p>
+                <p><i class="fas fa-thumbs-up"></i> {{ offer.votes }}</p>
+        </div>
+            <div class="card-footer">
+            <form method="POST" action="{% url 'add_to_cart' offer.id %}">
+                {% csrf_token %}
+                <div class="input-group">
+                <input class="form-control" type="number" min='1' max='999' name="quantity" placeholder="Quantity" required />
+                <span class="input-group-btn">
+                <button class="btn btn-dark" type="submit">Add to Basket</button>
+                </span>
+                </div>
+            </div>
+            </form>
+        </div>
+       
+    </div>
+    {% endfor %}
+</div>
+
+{% endblock %}

@@ -4,7 +4,7 @@ from .models import Box
 
 def display_boxes(request):
     """
-    View to show all box subscriptions available
+    View to show all boxes available
     """
     boxes = Box.objects.all().order_by('price')
     return render(request, 'boxes.html', {'boxes': boxes} )

@@ -1,7 +1,12 @@
 from django.db import models
 
 # Create your models here.
+
 class Box(models.Model):
+    """
+    Model for each Box
+    """
+    
     name = models.CharField(max_length=254, default='')
     description = models.CharField(max_length=500, default='')
     contents = models.TextField()

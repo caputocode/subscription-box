@@ -8,9 +8,12 @@
                 {% if box.image %}
                 <img class="boxes card-img-top" src="/media/{{ box.image }}"></img>
                 {% endif %}
-                <h3>{{ box.title }}</h3>
+                <h1>{{ box.name }}</h1>
                 <p>{{ box.description }}</p>
-                <p>{{ box.contents }}</p>
+                <h4>What's in the Box?</h4>
+                <ul>
+                <li><p>{{ box.contents }}</p></li>
+                </ul>
                     <a href="{% url 'boxes' %}" class="btn btn-default">Back to Boxes</a>
                     <hr>
                 </div>
